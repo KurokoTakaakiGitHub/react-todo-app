@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
+import { InputTodo } from "./Components/InputTodo";
 
 const App = () => {
   const [todoText, setTodoText] = useState("");
@@ -10,8 +11,9 @@ const App = () => {
 
   // 入力値が変更になったイベント
   //  inputで入力された値の取得方法 引数 event
-  const onChangeTodoText = (event) => setTodoText(event.target.value);
-
+  const onChangeTodoText = (event) => {
+    setTodoText(event.target.value);
+  };
   // 追加ボタンクリックイベント
   const onClickAdd = () => {
     if (todoText === "") return;
@@ -37,7 +39,7 @@ const App = () => {
   };
 
   // 戻すボタンクリックイベント
-  const onClickRetrun = (index) => {
+  const onClickReturn = (index) => {
     const newIncompleteTodos = [...inCompleteTodos, completeTodos[index]];
 
     const newCompleteTodos = [...completeTodos];
@@ -49,14 +51,11 @@ const App = () => {
 
   return (
     <>
-      <div className="input-area">
-        <input
-          placeholder="TODO入力"
-          value={todoText}
-          onChange={onChangeTodoText}
-        ></input>
-        <button onClick={onClickAdd}>追加</button>
-      </div>
+      <InputTodo
+        todoText={todoText}
+        onChange={onChangeTodoText}
+        onClickAdd={onClickAdd}
+      />
       <div className="incomplete-area">
         <ul>
           <p className="title">未完了のタスク</p>
@@ -78,7 +77,7 @@ const App = () => {
             return (
               <div key={todo} className="list-row">
                 <li>{todo}</li>
-                <button onClick={() => onClickRetrun(index)}>戻す</button>
+                <button onClick={() => onClickReturn(index)}>戻す</button>
               </div>
             );
           })}
