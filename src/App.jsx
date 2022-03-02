@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { InputTodo } from "./Components/InputTodo";
-import { InCompleteTodo } from "./Components/InCompleteTodo";
+import { InCompleteTodos } from "./Components/InCompleteTodos";
 
 const App = () => {
   const [todoText, setTodoText] = useState("");
@@ -57,7 +57,7 @@ const App = () => {
         onChange={onChangeTodoText}
         onClickAdd={onClickAdd}
       />
-      <InCompleteTodo
+      <InCompleteTodos
         todos={inCompleteTodos}
         onClickComplete={onClickComplete}
         onClickDelete={onClickDelete}

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const InCompleteTodo = (props) => {
+export const InCompleteTodos = (props) => {
   const { todos, onClickComplete, onClickDelete } = props;
 
   return (
