@@ -25,14 +25,14 @@ li {
   margin: 8px;
 }
 
-.input-area {
+/* .input-area {
   background-color: skyblue;
   width: 400px;
   height: 30px;
   padding: 8px;
   margin: 8px;
   border-radius: 8px;
-}
+} */
 
 .incomplete-area {
   background-color: springgreen;
@@ -42,7 +42,6 @@ li {
   margin: 8px;
   border-top-left-radius: 8px;
 }
-
 
 .complete-area {
   background-color: pink;
@@ -65,4 +64,3 @@ li {
   align-items: center;
   padding-bottom: 8px;
 }
-
