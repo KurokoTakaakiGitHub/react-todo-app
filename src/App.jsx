@@ -7,6 +7,8 @@ const App = () => {
     "いいいい"
   ]);
 
+  const [completeTodos, setcompleteTodos] = useState(["うううう"]);
+
   return (
     <>
       <div className="input-area">
@@ -30,10 +32,14 @@ const App = () => {
       <div className="complete-area">
         <ul>
           <p className="title">完了のタスク</p>
-          <div className="list-row">
-            <li>うううう</li>
-            <button>戻す</button>
-          </div>
+          {completeTodos.map((todo) => {
+            return (
+              <div key={todo} className="list-row">
+                <li></li>
+                <button>{todo}</button>
+              </div>
+            );
+          })}
         </ul>
       </div>
     </>
